@@ -1,26 +1,18 @@
-dict_gender = {"M":["M","MALE"],
-               "F":["F","FEMALE"]}
 
-dict_origin = {"R": ["ROUSSET"],
-               "S": ["STRASBOURG"],
-               "I": ["INT", "MARSEILLEINT",'INTMARSEILLE'],
-               "J": ["JOSEPHAIGUIER", "JOSEPHAIGUIERMARSEILLE","MARSEILLEJOSEPHAIGUIER"]}
-
-dict_species = {"F" : ["MACACAFASCICULARIS"],
-                "M": ["MACACAMULATTA"],
-                "O":["MARMOUSET", "OUISTITI"],
-                "P":["PAPIO","PAPIOHPAPIO"],
-                "S": ["SAIMIRI","SAIMIRISCIUREUS"]}
-
+import json
 from generate_GUID.strip_accents import text_to_id
 
-def return_code_from_dict(cur_str, cur_dict):
+def return_code_from_json(cur_str, cur_json):
 
-    for key, elem in cur_dict.items():
-        print (elem)
-        print (text_to_id(cur_str))
-        if text_to_id(cur_str) in elem:
-            return key
+    with open(cur_json) as json_file:
+        cur_dict = json.load(json_file)
+        for key, elem in cur_dict.items():
+            if text_to_id(cur_str) in elem:
+                print("Found {}, corresponds to {}".format(
+                    text_to_id(cur_str), key))
+                return key
+    print("Error {} could not be found in {}".format(
+        text_to_id(cur_str), cur_json))
     return 0
 
 def check_num_tat(num_tat):
@@ -29,15 +21,13 @@ def check_num_tat(num_tat):
     return "{:07d}".format(num_tat)
 
 
-def return_guid_animal(gender, origin, species, num_tat):
+def return_guid_animal_json(gender, origin, species, num_tat):
     return "{}{}{}-{}".format(
-        return_code_from_dict(gender, dict_gender),
-        return_code_from_dict(origin, dict_origin),
-        return_code_from_dict(species, dict_species),
+        return_code_from_json(gender, "dict_gender.json"),
+        return_code_from_json(origin, "dict_origin.json"),
+        return_code_from_json(species, "dict_species.json"),
         check_num_tat(num_tat)
         )
 
-print (return_guid_animal("Male",'INT',"Marmouset", 3592264))
-
-
-print (return_guid_animal("F",'Joseph Aiguier',"MACACAMULATTA", 129494))
+print (return_guid_animal_json("Male",'INT',"Marmouset", 3592264))
+print (return_guid_animal_json("F",'Joseph Aiguier',"MACACAMULATTA", 129494))
