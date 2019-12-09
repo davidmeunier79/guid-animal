@@ -29,5 +29,6 @@ def return_guid_animal_json(gender, origin, species, num_tat):
         check_num_tat(num_tat)
         )
 
-print (return_guid_animal_json("Male",'INT',"Marmouset", 3592264))
-print (return_guid_animal_json("F",'Joseph Aiguier',"MACACAMULATTA", 129494))
+print ("***", return_guid_animal_json("Male",'INT',"Marmouset", 3592264))
+print ("***", return_guid_animal_json("F",'Joseph Aiguier',"MACACAMULATTA", 129494))
+print ("***", return_guid_animal_json("F",'Strasbourg',"Papio H. Papio", 1122))
