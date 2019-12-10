@@ -32,3 +32,4 @@ def return_guid_animal_json(gender, origin, species, dob, index_anim = "A"):
 
 print ("***", return_guid_animal_json("Male",'INT',"Marmouset", "01/01/1970"))
 print ("***", return_guid_animal_json("Male",'INT',"Marmouset", "1970-01-01"))
+print ("***", return_guid_animal_json("Male",'INT',"Marmouset", "1970-01/01","B"))
