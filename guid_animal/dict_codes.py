@@ -1,6 +1,6 @@
 
 import json
-from generate_GUID.strip_accents import text_to_id
+from guid_core.strip_accents import (text_to_id, format_age)
 
 def return_code_from_json(cur_str, cur_json):
 
@@ -21,14 +21,14 @@ def check_num_tat(num_tat):
     return "{:07d}".format(num_tat)
 
 
-def return_guid_animal_json(gender, origin, species, num_tat):
-    return "{}{}{}-{}".format(
+def return_guid_animal_json(gender, origin, species, dob, index_anim = "A"):
+    return "{}{}{}-{}{}".format(
         return_code_from_json(gender, "dict_gender.json"),
         return_code_from_json(origin, "dict_origin.json"),
         return_code_from_json(species, "dict_species.json"),
-        check_num_tat(num_tat)
+        format_age(dob, length_year = 2),
+        index_anim
         )
 
-print ("***", return_guid_animal_json("Male",'INT',"Marmouset", 3592264))
-print ("***", return_guid_animal_json("F",'Joseph Aiguier',"MACACAMULATTA", 129494))
-print ("***", return_guid_animal_json("F",'Strasbourg',"Papio H. Papio", 1122))
+print ("***", return_guid_animal_json("Male",'INT',"Marmouset", "01/01/1970"))
+print ("***", return_guid_animal_json("Male",'INT',"Marmouset", "1970-01-01"))
