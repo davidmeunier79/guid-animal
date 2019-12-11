@@ -1,7 +1,7 @@
 {
-    "R": ["ROUSSET"],
-    "S": ["STRASBOURG"],
-    "I": ["INT", "MARSEILLEINT", "INTMARSEILLE"],
-    "J": ["JOSEPHAIGUIER", "JOSEPHAIGUIERMARSEILLE","MARSEILLEJOSEPHAIGUIER"],
-    "Z": ["Zurich", "Zürich"]
+    "R": ["Rousset", "ROUSSET"],
+    "S": ["Strasbourg", "STRASBOURG"],
+    "I": ["INT Marseille", "INT", "MARSEILLEINT", "INTMARSEILLE"],
+    "J": ["Joseph Aiguier Marseille", "JOSEPHAIGUIER", "JOSEPHAIGUIERMARSEILLE","MARSEILLEJOSEPHAIGUIER"],
+    "Z": ["Zurich", "ZURICH"]
 }
