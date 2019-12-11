@@ -1,7 +1,7 @@
 {
-    "F" : ["MACACAFASCICULARIS"],
-    "M": ["MACACAMULATTA"],
-    "O":["MARMOUSET", "OUISTITI"],
-    "P":["PAPIO","PAPIOHPAPIO"],
-    "S": ["SAIMIRI","SAIMIRISCIUREUS"]
+    "F" : ["Macaque FASCICULARIS", "MACACAFASCICULARIS"],
+    "M": ["Macaque MULATTA", "MACACAMULATTA"],
+    "O": ["Marmouset", "MARMOUSET", "OUISTITI"],
+    "P": ["Papio", "PAPIO","PAPIOHPAPIO"],
+    "S": ["Saimiri", "SAIMIRI","SAIMIRISCIUREUS"]
 }

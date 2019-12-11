@@ -1,4 +1,4 @@
 {
-    "M":["M","MALE"],
-    "F":["F","FEMALE"]
+    "M":["Male", "M","MALE"],
+    "F":["Female", "F","FEMALE"]
 }
