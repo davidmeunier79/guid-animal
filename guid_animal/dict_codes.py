@@ -1,6 +1,6 @@
 
 import json
-from guid_core.strip_accents import (text_to_id, format_age)
+from generateGUID.strip_accents import (text_to_id, format_age)
 
 def return_code_from_json(cur_str, cur_json):
 
